@@ -1,0 +1,10 @@
+.box-cl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.box-img {
+  filter: grayscale(100%) hue-rotate(240deg) saturate(50%);
+}

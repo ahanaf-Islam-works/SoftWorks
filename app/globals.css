@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Merriweather Regular";
+  src: url("../public/fonts/MerriweatherSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Uni Sans heavy";
+  src: url("../public/fonts/uni-sans.heavy-caps.otf");
+}
+
+@font-face {
+  font-family: "Uni Sans regular";
+  src: url("../public/fonts/uni-sans.thin-caps.otf");
+}
+
+html {
+  scroll-behavior: smooth;
+  --brand-purple: #4c1d95;
+  --dodger-blue: #219bf8ff;
+  --electric-indigo: #6c2af8ff;
+  --majorelle-blue: #4d4cf8ff;
+  --russian-violet: #110e3bff;
+  --dutch-white: #dbd5b5ff;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--russian-violet);
+}
+
+a {
+  text-decoration: none;
+}
+
+.main_logo {
+  display: flex;
+  align-items: center;
+}
+
+/* h1 h2 h3 p styles */
+/* Default styles for all devices */
+
+.gradient-text {
+  background: linear-gradient(90deg, #4c1d95, #219bf8ff, #6c2af8ff, #4d4cf8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Uni Sans Regular";
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Uni Sans Regular";
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Uni Sans heavy";
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "Merriweather Regular";
+  @apply dark:text-gray-600;
+}
+
+/* Styles for screens smaller than 600px (e.g. phones) */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Styles for screens larger than 600px but smaller than 1024px (e.g. tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Styles for screens larger than 1024px (e.g. desktops) */
+@media only screen and (min-width: 1025px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Font size End */
+.bolded {
+  font-weight: bold;
+}
+
+/* Button */
+
+.btn-full {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: "Uni Sans regular";
+  cursor: pointer;
+  margin-top: 20px;
+  background: var(--brand-purple);
+  color: #fff;
+  box-shadow: 0 0 15px var(--brand-purple);
+  text-align: center;
+  margin-right: 10px;
+  border: 2px solid var(--brand-purple);
+  transition: 0.5s ease;
+}
+
+.btn-trans {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: "Uni Sans regular";
+  cursor: pointer;
+  margin-top: 20px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  text-align: center;
+  margin-right: 10px;
+  transition: 0.5s ease;
+}
+
+.btn-full:hover {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: "Uni Sans regular";
+  cursor: pointer;
+  margin-top: 20px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  text-align: center;
+  margin-right: 10px;
+  transition: 0.5s ease;
+}
+
+.btn-trans:hover {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: "Uni Sans regular";
+  cursor: pointer;
+  margin-top: 20px;
+  background: var(--brand-purple);
+  color: #fff;
+  box-shadow: 0 0 5px grey;
+  text-align: center;
+  margin-right: 10px;
+  border-color: transparent;
+  transition: 0.5s ease;
+}
+
+.title-card {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 15px grey;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.9s ease;
+  cursor: pointer;
+}
+
+.title-card::before {
+  content: attr(count-id);
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: -18px;
+  left: -15px;
+  padding: 15px;
+  border-radius: 5px;
+  background: var(--brand-purple);
+  box-shadow: 0 0 15px grey;
+}
+
+.title-card:hover {
+  box-shadow: 0 0 5px grey;
+  background-color: var(--brand-purple);
+  color: #fff;
+  transition: 0.5s ease;
+  scale: 1.08;
+}
+
+/* main card */
+
+.card-main {
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 0 15px grey;
+  margin-bottom: 20px;
+  position: relative;
+  transition: 0.9s ease;
+}
+
+.card-main:hover {
+  scale: 1.06;
+}
+
+#about {
+  background-image: url("../public/images/background-01-01.jpg");
+  background-position: center;
+  position: relative;
+}
+
+.phero {
+  background-image: url("../public/images/creative.jpg");
+}
+
+.cta {
+  background-image: url("../public/images/creative.jpg");
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--russian-violet);
+  opacity: 0.5;
+}
